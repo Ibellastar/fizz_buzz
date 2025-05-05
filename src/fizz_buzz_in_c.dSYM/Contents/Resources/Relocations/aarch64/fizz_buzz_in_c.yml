@@ -1,5 +1,0 @@
----
-triple:          'arm64-apple-darwin'
-binary-path:     '/Users/bella/instruction/fizz_buzz/src/fizz_buzz_in_c'
-relocations:     []
-...
