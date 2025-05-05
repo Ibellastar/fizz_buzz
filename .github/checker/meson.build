@@ -25,7 +25,7 @@ test1_1 = executable('test_seventeen',
 )
 
 
-test('Prints Fizz and some other stuff', test1_1)
+test('Prints numbers', test1_1)
 
 test1_2 = executable('test_three',
   sources: [
