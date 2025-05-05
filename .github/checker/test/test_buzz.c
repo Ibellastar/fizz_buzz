@@ -9,6 +9,6 @@ void tearDown(void)
 }
 
 
-void test_positive_numbers(void) {
+void test_buzz(void) {
     TEST_ASSERT_EQUAL_INT((fizzbuzz(5), "Buzz") == 0);
 }

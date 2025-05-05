@@ -8,6 +8,6 @@ void tearDown(void)
 {
 }
 
-void test_two_negatives(void) {
+void test_fizzbuzz(void) {
     TEST_ASSERT_EQUAL_INT((fizzbuzz(15), "FizzBuzz") == 0);
 }

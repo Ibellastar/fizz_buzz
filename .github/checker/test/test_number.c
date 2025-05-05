@@ -8,6 +8,6 @@ void tearDown(void)
 {
 }
 
-void test_zero_multiplication(void) {
+void test_number(void) {
     TEST_ASSERT_EQUAL_INT((fizzbuzz(2), "2") == 0);
 }

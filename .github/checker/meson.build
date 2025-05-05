@@ -1,4 +1,4 @@
-project('Multiplier', 'c',
+project('FizzBuzz', 'c',
   version: '0.1',
   default_options: [
     'c_std=c99',
@@ -12,77 +12,62 @@ unity_gen_runner = unity_subproject.get_variable('gen_test_runner')
 
 inc = include_directories('../../src')
 
-test1_1 = executable('test_negative_and_positive',
+test1_1 = executable('test_buzz',
   sources: [
     files([
-      '../../src' / 'multiplier.c',
-      'test' / 'test_negative_and_positive.c',
+      '../../src' / 'fizz_buzz_in_c.c',
+      'test' / 'test_buzz.c',
     ]),
-    unity_gen_runner.process('test' / 'test_negative_and_positive.c')
+    unity_gen_runner.process('test' / 'test_buzz.c')
   ],
   include_directories: [ inc ],
   dependencies: [ unity_dependency ],
 )
 
 
-test('Negative and positive number', test1_1)
+test('Prints Fizz', test1_1)
 
-test1_2 = executable('test_positive_numbers',
+test1_2 = executable('test_fizz',
   sources: [
     files([
-      '../../src' / 'multiplier.c',
-      'test' / 'test_positive_numbers.c',
+      '../../src' / 'fizz_buzz_in_c.c',
+      'test' / 'test_fizz.c',
     ]),
-    unity_gen_runner.process('test' / 'test_positive_numbers.c')
+    unity_gen_runner.process('test' / 'test_fizz.c')
   ],
   include_directories: [ inc ],
   dependencies: [ unity_dependency ],
 )
 
 
-test('Positive numbers', test1_2)
+test('Prints Fizz', test1_2)
 
-test1_3 = executable('test_two_negatives',
+test1_3 = executable('test_fizzbuzz',
   sources: [
     files([
-      '../../src' / 'multiplier.c',
-      'test' / 'test_two_negatives.c',
+      '../../src' / 'fizz_buzz_in_c.c',
+      'test' / 'test_fizzbuzz.c',
     ]),
-    unity_gen_runner.process('test' / 'test_two_negatives.c')
+    unity_gen_runner.process('test' / 'test_fizzbuzz.c')
   ],
   include_directories: [ inc ],
   dependencies: [ unity_dependency ],
 )
 
 
-test('Negative numbers', test1_3)
+test('Prints FizzBuzz', test1_3)
 
-test1_4 = executable('test_zero_multiplication',
+test1_4 = executable('test_number',
   sources: [
     files([
-      '../../src' / 'multiplier.c',
-      'test' / 'test_zero_multiplication.c',
+      '../../src' / 'fizz_buzz_in_c.c',
+      'test' / 'test_number.c',
     ]),
-    unity_gen_runner.process('test' / 'test_zero_multiplication.c')
+    unity_gen_runner.process('test' / 'test_number.c')
   ],
   include_directories: [ inc ],
   dependencies: [ unity_dependency ],
 )
 
 
-test('Zero times a number', test1_4)
-
-test1_5 = executable('test_zero_times_zero',
-  sources: [
-    files([
-      '../../src' / 'multiplier.c',
-      'test' / 'test_zero_times_zero.c',
-    ]),
-    unity_gen_runner.process('test' / 'test_zero_times_zero.c')
-  ],
-  include_directories: [ inc ],
-  dependencies: [ unity_dependency ],
-)
-
-
-test('Zero times zero', test1_5)
+test('Prints Number', test1_4)
