@@ -41,6 +41,6 @@ void test_seventeen(void) {
     fclose(expected_output_1);
 
     // Compare file content to expected string
-    // // TEST_ASSERT_EQUAL_STRING("1\n2\nFizz\n4\nBuzz\nFizz\n7\n8\nFizz\nBuzz\n11\nFizz\n13\n14\nFizzBuzz\n16\n17\n", buffer);
+    // // if this fails, print the diff between expected and actual
     TEST_ASSERT_EQUAL_STRING(expected_output_buffer, buffer);
 }
