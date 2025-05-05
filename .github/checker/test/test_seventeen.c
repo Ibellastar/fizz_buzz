@@ -16,7 +16,8 @@ void test_seventeen(void) {
     TEST_ASSERT_NOT_NULL(read_file);
 
     char buffer[256];
-    fgets(buffer, sizeof(buffer), read_file);
+    size_t bytes_read = fread(buffer, 1, sizeof(buffer) - 1, read_file);
+    buffer[bytes_read] = '\0';
     fclose(read_file);
 
     // Compare file content to expected string
