@@ -1,7 +1,7 @@
 #include <stdio.h>
 
-int main() {
-    for (int i = 1; i <= 100; i++) {
+void fizz_buzz(int number) {
+    for (int i = 1; i <= number; i++) {
         if (i % 3 ==0 && i % 5 ==0) {
             printf("FizzBuzz\n");
         }
@@ -14,5 +14,4 @@ int main() {
             printf("%d\n", i);
         }
     }
-    return 0;
 }
