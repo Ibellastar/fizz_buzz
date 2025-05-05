@@ -1,0 +1,5 @@
+---
+triple:          'arm64-apple-darwin'
+binary-path:     '/Users/bella/instruction/autograde-test/multiplier'
+relocations:     []
+...

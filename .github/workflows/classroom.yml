@@ -1,0 +1,36 @@
+name: Grading Report
+on:
+  - workflow_dispatch
+  - push
+
+permissions:
+  checks: write
+  actions: read
+  contents: read
+  pull-requests: write
+
+jobs:
+  run-autograding-tests:
+    runs-on: ubuntu-22.04
+    if: github.actor != 'github-classroom[bot]'
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+      - name: Install dependencies
+        run: python -m pip install meson==1.0.1 ninja
+      - name: Remove Unit Test Files
+        run: rm -rf **/*.junit.xml **/*.tap **/*.trx
+      - name: Configure Project
+        run: make setup -C .github/checker
+        # env:
+        #   CC: gcc
+      - name: Run Tests
+        run: make check -C .github/checker || true
+      - name: Grade Report
+        uses: atlas-school-classroom/atlas-autograding-reporter@main
+        env:
+          MAX_POINTS: 50
