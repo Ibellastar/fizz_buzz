@@ -38,7 +38,7 @@ void test_three(void) {
     char expected_output_buffer[256];
     size_t bytes_read_2 = fread(expected_output_buffer, 1, sizeof(expected_output_buffer) - 1, expected_output_2);
     expected_output_buffer[bytes_read_2] = '\0';
-    fclose(expected_output_1);
+    fclose(expected_output_2);
 
     // Compare file content to expected string
     // // if this fails, print the diff between expected and actual
