@@ -13,5 +13,3 @@ Fizz
 13
 14
 FizzBuzz
-16
-17

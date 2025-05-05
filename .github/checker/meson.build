@@ -57,47 +57,17 @@ test1_3 = executable('test_five',
 
 test('Prints Buzz', test1_3)
 
-# test1_2 = executable('test_fizz',
-#   sources: [
-#     files([
-#       '../../src' / 'fizz_buzz_in_c.c',
-#       'test' / 'test_fizz.c',
-#     ]),
-#     unity_gen_runner.process('test' / 'test_fizz.c')
-#   ],
-#   include_directories: [ inc ],
-#   dependencies: [ unity_dependency ],
-# )
+test1_4 = executable('test_fifteen',
+  sources: [
+    files([
+      '../../src' / 'fizz_buzz.c',
+      'test' / 'test_fifteen.c',
+    ]),
+    unity_gen_runner.process('test' / 'test_fifteen.c')
+  ],
+  include_directories: [ inc ],
+  dependencies: [ unity_dependency ],
+)
 
 
-# test('Prints Fizz', test1_2)
-
-# test1_3 = executable('test_fizzbuzz',
-#   sources: [
-#     files([
-#       '../../src' / 'fizz_buzz_in_c.c',
-#       'test' / 'test_fizzbuzz.c',
-#     ]),
-#     unity_gen_runner.process('test' / 'test_fizzbuzz.c')
-#   ],
-#   include_directories: [ inc ],
-#   dependencies: [ unity_dependency ],
-# )
-
-
-# test('Prints FizzBuzz', test1_3)
-
-# test1_4 = executable('test_number',
-#   sources: [
-#     files([
-#       '../../src' / 'fizz_buzz_in_c.c',
-#       'test' / 'test_number.c',
-#     ]),
-#     unity_gen_runner.process('test' / 'test_number.c')
-#   ],
-#   include_directories: [ inc ],
-#   dependencies: [ unity_dependency ],
-# )
-
-
-# test('Prints Number', test1_4)
+test('Prints FizzBuzz', test1_4)
