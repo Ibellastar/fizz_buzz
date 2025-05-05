@@ -11,6 +11,16 @@ void tearDown(void)
 
 
 void test_seventeen(void) {
+    // Redirect stdout to a file
+    FILE *write_file = freopen("output_seventeen.txt", "w", stdout);
+    TEST_ASSERT_NOT_NULL(write_file);
+
+    // Call fizz_buzz with 17
+    fizz_buzz(17);
+
+    // Restore stdout
+    freopen("/dev/tty", "w", stdout);
+
     // Read file content
     FILE *read_file = fopen("output_seventeen.txt", "r");
     TEST_ASSERT_NOT_NULL(read_file);
