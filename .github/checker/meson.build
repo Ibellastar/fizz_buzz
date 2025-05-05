@@ -12,13 +12,13 @@ unity_gen_runner = unity_subproject.get_variable('gen_test_runner')
 
 inc = include_directories('../../src')
 
-test1_1 = executable('test_buzz',
+test1_1 = executable('test_seventeen',
   sources: [
     files([
       '../../src' / 'fizz_buzz.c',
-      'test' / 'test_buzz.c',
+      'test' / 'test_seventeen.c',
     ]),
-    unity_gen_runner.process('test' / 'test_buzz.c')
+    unity_gen_runner.process('test' / 'test_seventeen.c')
   ],
   include_directories: [ inc ],
   dependencies: [ unity_dependency ],
