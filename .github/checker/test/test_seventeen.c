@@ -31,10 +31,10 @@ void test_seventeen(void) {
     fclose(read_file);
 
     // Expected output
-    const char *expected_output = "1\n2\nFizz\n4\nBuzz\nFizz\n7\n8\nFizz\nBuzz\n11\nFizz\n13\n14\nFizzBuzz\n16\n17\n";
+    const char *expected_output = ("1\n2\nFizz\n4\nBuzz\nFizz\n7\n8\nFizz\nBuzz\n11\nFizz\n13\n14\nFizzBuzz\n16\n17\n");
 
     // Compare file content to expected string
-    if (strcmp(expected_output, buffer) != 0) {
+    if (strcmp(expected_output != buffer)) {
         printf("Test failed!\n");
         printf("Expected:\n%s\n", expected_output);
         printf("Actual:\n%s\n", buffer);
