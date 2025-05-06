@@ -12,22 +12,7 @@ unity_gen_runner = unity_subproject.get_variable('gen_test_runner')
 
 inc = include_directories('../../src')
 
-test1_1 = executable('test_seventeen',
-  sources: [
-    files([
-      '../../src' / 'fizz_buzz.c',
-      'test' / 'test_seventeen.c',
-    ]),
-    unity_gen_runner.process('test' / 'test_seventeen.c')
-  ],
-  include_directories: [ inc ],
-  dependencies: [ unity_dependency ],
-)
-
-
-test('Prints numbers', test1_1)
-
-test1_2 = executable('test_three',
+test1_1 = executable('test_three',
   sources: [
     files([
       '../../src' / 'fizz_buzz.c',
@@ -40,9 +25,9 @@ test1_2 = executable('test_three',
 )
 
 
-test('Prints Fizz', test1_2)
+test('Prints 1-3', test1_1)
 
-test1_3 = executable('test_five',
+test1_2 = executable('test_five',
   sources: [
     files([
       '../../src' / 'fizz_buzz.c',
@@ -55,9 +40,9 @@ test1_3 = executable('test_five',
 )
 
 
-test('Prints Buzz', test1_3)
+test('Prints 1-5', test1_2)
 
-test1_4 = executable('test_fifteen',
+test1_3 = executable('test_fifteen',
   sources: [
     files([
       '../../src' / 'fizz_buzz.c',
@@ -70,4 +55,19 @@ test1_4 = executable('test_fifteen',
 )
 
 
-test('Prints FizzBuzz', test1_4)
+test('Prints 1-15', test1_3)
+
+test1_4 = executable('test_seventeen',
+  sources: [
+    files([
+      '../../src' / 'fizz_buzz.c',
+      'test' / 'test_seventeen.c',
+    ]),
+    unity_gen_runner.process('test' / 'test_seventeen.c')
+  ],
+  include_directories: [ inc ],
+  dependencies: [ unity_dependency ],
+)
+
+
+test('Prints 1-17', test1_4)
