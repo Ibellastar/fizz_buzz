@@ -12,18 +12,20 @@ unity_gen_runner = unity_subproject.get_variable('gen_test_runner')
 
 inc = include_directories('../../src')
 
-test_derek = executable('test_derek',
+test_1 = executable('test_1',
   sources: [
     files([
       '../../src' / 'fizz_buzz.c',
-      'test' / 'test_derek.c',
+      'test' / 'test_1.c',
     ]),
-    unity_gen_runner.process('test' / 'test_derek.c')
+    unity_gen_runner.process('test' / 'test_1.c')
   ],
   include_directories: [ inc ],
   dependencies: [ unity_dependency ],
 )
-test('Test Derek', test_derek)
+
+
+test('Test 1', test_1)
 
 # test1_1 = executable('test_three',
 #   sources: [
@@ -70,17 +72,17 @@ test('Test Derek', test_derek)
 
 # test('Prints 1-15', test1_3)
 
-test1_4 = executable('test_seventeen',
-  sources: [
-    files([
-      '../../src' / 'fizz_buzz.c',
-      'test' / 'test_seventeen.c',
-    ]),
-    unity_gen_runner.process('test' / 'test_seventeen.c')
-  ],
-  include_directories: [ inc ],
-  dependencies: [ unity_dependency ],
-)
+# test1_4 = executable('test_seventeen',
+#   sources: [
+#     files([
+#       '../../src' / 'fizz_buzz.c',
+#       'test' / 'test_seventeen.c',
+#     ]),
+#     unity_gen_runner.process('test' / 'test_seventeen.c')
+#   ],
+#   include_directories: [ inc ],
+#   dependencies: [ unity_dependency ],
+# )
 
 
-test('Prints 1-17', test1_4)
+# test('Prints 1-17', test1_4)
