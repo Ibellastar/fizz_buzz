@@ -70,17 +70,17 @@ test('Test Derek', test_derek)
 
 # test('Prints 1-15', test1_3)
 
-# test1_4 = executable('test_seventeen',
-#   sources: [
-#     files([
-#       '../../src' / 'fizz_buzz.c',
-#       'test' / 'test_seventeen.c',
-#     ]),
-#     unity_gen_runner.process('test' / 'test_seventeen.c')
-#   ],
-#   include_directories: [ inc ],
-#   dependencies: [ unity_dependency ],
-# )
+test1_4 = executable('test_seventeen',
+  sources: [
+    files([
+      '../../src' / 'fizz_buzz.c',
+      'test' / 'test_seventeen.c',
+    ]),
+    unity_gen_runner.process('test' / 'test_seventeen.c')
+  ],
+  include_directories: [ inc ],
+  dependencies: [ unity_dependency ],
+)
 
 
-# test('Prints 1-17', test1_4)
+test('Prints 1-17', test1_4)
