@@ -1,4 +1,5 @@
 checker-output/
+build/
 **/subprojects/*
 !**/subprojects/*.wrap
 *.out

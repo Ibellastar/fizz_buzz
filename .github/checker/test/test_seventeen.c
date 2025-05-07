@@ -14,7 +14,7 @@ void tearDown(void)
 
 void test_seventeen(void) {
     // read expected and read actual and use a string comparison 
-    FILE *read_file = fopen("../.github/checker/test/expected_output_seventeen.txt", "r");
+    FILE *read_file = fopen("../test/expected_output_seventeen.txt", "r");
     TEST_ASSERT_NOT_NULL(read_file);
 
     char expected[256];
@@ -23,7 +23,7 @@ void test_seventeen(void) {
     fclose(read_file);
 
     // Read file content
-    FILE *actual_file = fopen("../.github/checker/test_seventeen_output.txt", "r");
+    FILE *actual_file = fopen("../test_seventeen_output.txt", "r");
     TEST_ASSERT_NOT_NULL(actual_file);
 
     char actual_buffer[256];
