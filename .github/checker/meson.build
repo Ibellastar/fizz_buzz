@@ -15,10 +15,10 @@ inc = include_directories('../../src')
 test_1 = executable('test_1',
   sources: [
     files([
-      '../../src' / 'fizz_buzz.c',
-      'test' / 'test_1.c',
+      '../../src/fizz_buzz.c',
+      'tests/test_1/test_1.c',
     ]),
-    unity_gen_runner.process('test' / 'test_1.c')
+    unity_gen_runner.process('tests/test_1/test_1.c')
   ],
   include_directories: [ inc ],
   dependencies: [ unity_dependency ],

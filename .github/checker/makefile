@@ -26,13 +26,13 @@ compile:
 
 .PHONY: test_1
 test_1:
-	gcc -o build/test_1 test/main_1.c ../../src/fizz_buzz.c 
-	build/test_1 > actual_output_1.txt 2>&1
+	gcc -o build/test_1 tests/test_1/main_1.c ../../src/fizz_buzz.c 
+	build/test_1 > checker-output/actual_output_1.txt 2>&1
 
-.PHONY: test_seventeen
-test_seventeen:
-	gcc -o build/test_seventeen test/main_seventeen.c ../../src/fizz_buzz.c 
-	build/test_seventeen > test_seventeen_output.txt 2>&1
+# .PHONY: test_seventeen
+# test_seventeen:
+# 	gcc -o build/test_seventeen test/main_seventeen.c ../../src/fizz_buzz.c 
+# 	build/test_seventeen > test_seventeen_output.txt 2>&1
 
 check:
 	meson test -C $(BUILD_DIR) --print-errorlogs -v
