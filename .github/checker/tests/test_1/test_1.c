@@ -12,7 +12,7 @@ void tearDown(void)
 
 void test_1(void) {
     // read expected and read actual and use a string comparison 
-    FILE *expected_file = fopen("../tests/test_1/expected_output_1.txt", "r");
+    FILE *expected_file = fopen("../.github/checker/tests/test_1/expected_output_1.txt", "r");
     TEST_ASSERT_NOT_NULL(expected_file);
 
     char expected_buffer[256];

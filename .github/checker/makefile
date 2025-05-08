@@ -1,5 +1,5 @@
 CLEANUP = rm -rf
-BUILD_DIR = checker-output
+BUILD_DIR = ../../checker-output
 
 #We try to detect the OS we are running on, and adjust commands as needed
 ifeq ($(OS),Windows_NT)
@@ -27,7 +27,7 @@ compile:
 .PHONY: test_1
 test_1:
 	gcc -o build/test_1 tests/test_1/main_1.c ../../src/fizz_buzz.c 
-	build/test_1 > checker-output/actual_output_1.txt 2>&1
+	build/test_1 > ../../checker-output/actual_output_1.txt 2>&1
 
 # .PHONY: test_seventeen
 # test_seventeen:
