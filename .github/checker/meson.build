@@ -25,7 +25,7 @@ test_1 = executable('test_1',
 )
 
 
-test('Test 1', test_1)
+test('Test 1: Better Title Here', test_1)
 
 # test1_1 = executable('test_three',
 #   sources: [
