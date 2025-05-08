@@ -42,6 +42,21 @@ test_2 = executable('test_2',
 
 test('Test 2 Better Title Here', test_2)
 
+test_3 = executable('test_3',
+  sources: [
+    files([
+      '../../src/fizz_buzz.c',
+      'tests/test_3/test_3.c',
+    ]),
+    unity_gen_runner.process('tests/test_3/test_3.c')
+  ],
+  include_directories: [ inc ],
+  dependencies: [ unity_dependency ],
+)
+
+
+test('Test 3 Better Title Here', test_3)
+
 # test1_1 = executable('test_three',
 #   sources: [
 #     files([
